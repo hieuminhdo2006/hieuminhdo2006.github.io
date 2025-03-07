@@ -1,0 +1,38 @@
+body {
+    background: gray;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    background: black;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    padding: 20px;
+}
+
+nav ul li a {
+    color:white;
+    text-decoration:none
+}
+
+nav ul li a:hover{
+    color:red
+}
+
+header h1 {
+    text-align: center;
+}
+
+article header p {
+    font-style: italic;
+}
+
+main {
+    padding-left: 20px;
+}
