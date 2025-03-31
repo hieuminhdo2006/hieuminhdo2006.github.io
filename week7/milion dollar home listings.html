@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exercise 5</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body {
+            background-color: #e8e8e8;
+        }
+        .container-fluid {
+            margin-top: 30px;
+        }
+        .house {
+            background-color: #fff;
+            padding: 20px;
+            float: left;
+            margin-bottom: 20px;
+        }
+        .house .media-body .list-inline {
+            margin-top: 10px;
+        }
+        .house .media-body span {
+            margin-top: 10px;
+        }
+
+        /* Media query for screens wider than 990px */
+        @media screen and (min-width: 990px) {
+            .house img {
+                max-width: 180px;
+            }
+        }
+
+        /* Media query for screens narrower than 990px */
+        @media screen and (max-width: 990px) {
+            .container .house p {
+                display: none;
+            }
+            .container .house .media-body a {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <!-- Navigation bar -->
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">House Business</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Messages</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="exercise1.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- ROW 1 - Title -->
+            <div class="row heading">
+                <div class="title col-md-12">
+                    <h1>Million Dollar Home Listings</h1>
+                    <p>Content</p>
+                </div>
+            </div>
+
+            <!-- ROW 2 - Content -->
+            <div class="row content">
+                <!-- Content COL 1 -->
+                <div class="col-md-6">
+                    <div class="house">
+                        <!-- Media component for house details -->
+                        <div class="media">
+                            <div class="pull-left">
+                                <a href="#">
+                                    <img src="01.jpg" class="img-responsive media-object" alt="House Image">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading hidden-xs">Media heading</h4>
+                                <a href="#">$1.975.000</a>
+                                <span class="badge pull-right">609 W Gravers Ln</span>
+                                <ul class="list-inline">
+                                    <li>4,820 SqFt</li><li>|</li>
+                                    <li>4,820 SqFt</li><li>|</li>
+                                    <li>5 Baths</li>
+                                </ul>
+                                <p>Content of media heading</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional house listings (copy and modify as needed) -->
+                    <div class="house">
+                        <div class="media">
+                            <div class="pull-left">
+                                <a href="#">
+                                    <img src="02.jpg" class="img-responsive media-object" alt="House Image">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading hidden-xs">Media heading</h4>
+                                <a href="#">$1.975.000</a>
+                                <span class="badge pull-right">609 W Gravers Ln</span>
+                                <ul class="list-inline">
+                                    <li>4,820 SqFt</li><li>|</li>
+                                    <li>4,820 SqFt</li><li>|</li>
+                                    <li>5 Baths</li>
+                                </ul>
+                                <p>Content of media heading</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content COL 2 -->
+                <div class="col-md-6">
+                    <!-- Copy the content above for the second column -->
+                    <div class="house">
+                        <div class="media">
+                            <div class="pull-left">
+                                <a href="#">
+                                    <img src="04.jpg" class="img-responsive media-object" alt="House Image">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading hidden-xs">Media heading</h4>
+                                <a href="#">$1.975.000</a>
+                                <span class="badge pull-right">609 W Gravers Ln</span>
+                                <ul class="list-inline">
+                                    <li>4,820 SqFt</li><li>|</li>
+                                    <li>4,820 SqFt</li><li>|</li>
+                                    <li>5 Baths</li>
+                                </ul>
+                                <p>Content of media heading</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="house">
+                        <div class="media">
+                            <div class="pull-left">
+                                <a href="#">
+                                    <img src="05.jpg" class="img-responsive media-object" alt="House Image">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading hidden-xs">Media heading</h4>
+                                <a href="#">$1.975.000</a>
+                                <span class="badge pull-right">609 W Gravers Ln</span>
+                                <ul class="list-inline">
+                                    <li>4,820 SqFt</li><li>|</li>
+                                    <li>4,820 SqFt</li><li>|</li>
+                                    <li>5 Baths</li>
+                                </ul>
+                                <p>Content of media heading</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
