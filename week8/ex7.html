@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register New Account</title>
+   <link rel="stylesheet" href="style1.css">
+<body>
+    <div class="registration-form">
+        <h1>REGISTER NEW ACCOUNT</h1>
+        
+        <h2>Username</h2>
+        <div class="form-group">
+            <input type="text" placeholder="Username">
+        </div>
+        
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" placeholder="Password">
+        </div>
+        
+        <div class="form-group">
+            <label>Confirm password</label>
+            <input type="password" placeholder="Confirm password">
+        </div>
+        
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="male" name="gender" checked>
+                    <label for="male">Male</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="female" name="gender">
+                    <label for="female">Female</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" placeholder="Phone">
+        </div>
+        
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="Email">
+        </div>
+        
+        <div class="form-group">
+            <label>Favourite</label>
+            <div class="checkbox-group">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="music" name="favourite">
+                    <label for="music">Music</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="reading" name="favourite">
+                    <label for="reading">Reading</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Picture</label>
+            <div class="file-upload">
+                <label for="file-upload" class="file-upload-label">Choose File</label>
+                <input id="file-upload" type="file">
+                <span class="file-name">No file chosen</span>
+            </div>
+        </div>
+        
+        <h2>Description</h2>
+        <div class="form-group">
+            <textarea placeholder="Description"></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label>Education level</label>
+            <select>
+                <option value="">Select education level</option>
+                <option value="highschool">High School</option>
+                <option value="college">College</option>
+                <option value="university">University</option>
+                <option value="postgrad">Postgraduate</option>
+            </select>
+        </div>
+      
+        <div class="form-group">
+            <label>Language</label>
+                <div class="form-group">
+                    <select>
+                        <option value="">Select language </option>
+                        <option value="Vietnamese">Vietnamese</option>
+                        <option value="english">english</option>
+                        <option value="French">Friench</option>
+                        <option value="Japanese">japanese</option>
+                    </select>
+            </div>
+        <div class="buttons">
+            <button class="register-btn">Register</button>
+            <button class="reset-btn">Reset</button>
+        </div>
+    <script>
+        // Simple script to show the selected file name
+        document.getElementById('file-upload').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : 'No file chosen';
+            document.querySelector('.file-name').textContent = fileName;
+        });
+    </script>
+</body>
+</html>
