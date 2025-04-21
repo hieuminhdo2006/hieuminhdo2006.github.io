@@ -4,110 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register New Account</title>
-   <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style1.css">
+</head>
 <body>
-    <div class="registration-form">
-        <h1>REGISTER NEW ACCOUNT</h1>
-        
+    <h1>REGISTER NEW ACCOUNT</h1>
+    
+    <form name="frmRegister" onsubmit="return formValid()">
         <h2>Username</h2>
-        <div class="form-group">
-            <input type="text" placeholder="Username">
+        <input type="text" name="txtUsername" required>
+        
+        <h2>Password</h2>
+        <input type="password" name="txtPassword" required>
+        <input type="password" name="txtPassword2" placeholder="Confirm password" required>
+        
+        <h2>Gender</h2>
+        <div class="radio-group">
+            <input type="radio" name="gender" value="male" id="male">
+            <label for="male">Male</label><br>
+            <input type="radio" name="gender" value="female" id="female">
+            <label for="female">Female</label>
         </div>
         
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" placeholder="Password">
+        <h2>Phone</h2>
+        <input type="text" name="txtPhone" required>
+        
+        <h2>Email</h2>
+        <input type="email" name="txtEmail" required>
+        
+        <h2>Favourite</h2>
+        <div class="checkbox-group">
+            <input type="checkbox" name="chkMusic" id="music">
+            <label for="music">Music</label><br>
+            <input type="checkbox" name="chkReading" id="reading">
+            <label for="reading">Reading</label>
         </div>
         
-        <div class="form-group">
-            <label>Confirm password</label>
-            <input type="password" placeholder="Confirm password">
-        </div>
-        
-        <div class="form-group">
-            <label>Gender</label>
-            <div class="radio-group">
-                <div class="radio-option">
-                    <input type="radio" id="male" name="gender" checked>
-                    <label for="male">Male</label>
-                </div>
-                <div class="radio-option">
-                    <input type="radio" id="female" name="gender">
-                    <label for="female">Female</label>
-                </div>
-            </div>
-        </div>
-        
-        <div class="form-group">
-            <label>Phone</label>
-            <input type="tel" placeholder="Phone">
-        </div>
-        
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="Email">
-        </div>
-        
-        <div class="form-group">
-            <label>Favourite</label>
-            <div class="checkbox-group">
-                <div class="checkbox-option">
-                    <input type="checkbox" id="music" name="favourite">
-                    <label for="music">Music</label>
-                </div>
-                <div class="checkbox-option">
-                    <input type="checkbox" id="reading" name="favourite">
-                    <label for="reading">Reading</label>
-                </div>
-            </div>
-        </div>
-        
-        <div class="form-group">
-            <label>Picture</label>
-            <div class="file-upload">
-                <label for="file-upload" class="file-upload-label">Choose File</label>
-                <input id="file-upload" type="file">
-                <span class="file-name">No file chosen</span>
-            </div>
-        </div>
+        <h2>Picture</h2>
+        <input type="file" name="fiPicture" required>
         
         <h2>Description</h2>
-        <div class="form-group">
-            <textarea placeholder="Description"></textarea>
-        </div>
+        <textarea name="txtDescription" rows="4" required></textarea>
         
-        <div class="form-group">
-            <label>Education level</label>
-            <select>
-                <option value="">Select education level</option>
-                <option value="highschool">High School</option>
-                <option value="college">College</option>
-                <option value="university">University</option>
-                <option value="postgrad">Postgraduate</option>
-            </select>
-        </div>
-      
-        <div class="form-group">
-            <label>Language</label>
-                <div class="form-group">
-                    <select>
-                        <option value="">Select language </option>
-                        <option value="Vietnamese">Vietnamese</option>
-                        <option value="english">english</option>
-                        <option value="French">Friench</option>
-                        <option value="Japanese">japanese</option>
-                    </select>
-            </div>
-        <div class="buttons">
-            <button class="register-btn">Register</button>
-            <button class="reset-btn">Reset</button>
-        </div>
+        <h3>Education level</h3>
+        <select name="educationLevel">
+            <option value="speech">Speech</option>
+            <option value="vietnamese">Vietnamese</option>
+            <option value="english">English</option>
+            <option value="french">French</option>
+            <option value="japanese">Japanese</option>
+        </select>
+        
+        <hr>
+        <button type="submit">Register</button>
+        <button type="reset">Reset</button>
+        <hr>
+    </form>
+
+    <div class="footer">
+        <p>Lab for Session 11 & 12</p>
+    </div>
+
     <script>
-        // Simple script to show the selected file name
-        document.getElementById('file-upload').addEventListener('change', function(e) {
-            const fileName = e.target.files[0] ? e.target.files[0].name : 'No file chosen';
-            document.querySelector('.file-name').textContent = fileName;
-        });
+        function formValid() {
+            f = document.frmRegister;
+            var phone_pattern = /^(\(0\d{1,3}\)\d{7}|0\d{9,10})$/;
+            var email_pattern = /^[a-zA-Z]\w*(\.\w+)*@\w+(\.\w{2,3})+$/;
+            
+            if(f.txtUsername.value == "") {
+                alert("Username can't be empty");
+                f.txtUsername.focus();
+                return false;
+            }
+            
+            if(f.txtPassword.value.length < 6) {
+                alert("Password length must be from 6 to 20 characters");
+                f.txtPassword.focus();
+                return false;
+            }
+            
+            if(f.txtPassword.value != f.txtPassword2.value) {
+                alert("Password doesn't match");
+                f.txtPassword2.focus();
+                return false;
+            }
+            
+            if(!phone_pattern.test(f.txtPhone.value)) {
+                alert("Invalid phone number");
+                f.txtPhone.focus();
+                return false;
+            }
+            
+            if(!email_pattern.test(f.txtEmail.value)) {
+                alert("Invalid email address");
+                f.txtEmail.focus();
+                return false;
+            }
+            
+            if(f.chkMusic.checked == false && f.chkReading.checked == false) {
+                alert("You must select at least one favourite");
+                f.chkMusic.focus();
+                return false;
+            }
+            
+            if(f.fiPicture.value == "") {
+                alert("You must select your picture");
+                return false;
+            }
+            
+            if(f.txtDescription.value == "") {
+                alert("You must enter description");
+                f.txtDescription.focus();
+                return false;
+            }
+            
+            alert("All register information are correct.");
+            return true;
+        }
+        
     </script>
 </body>
-</html>
+</html>  
